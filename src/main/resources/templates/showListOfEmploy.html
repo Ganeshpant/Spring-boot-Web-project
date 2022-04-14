@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="https:/www.thymeleaf.org">
+<head>
+<script src="https://code.jquery.com/jquery-2.2.4.js"
+	integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+	crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
+<script type="text/javascript" charset="utf8"
+	src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<div th:insert="hrader.html"></div>
+	<table id="mytable">
+
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Gender</th>
+				<th>email</th>
+				<th>Phone</th>
+				<th>Dob</th>
+				<th>Joindate</th>
+				<th>country</th>
+				<th>City</th>
+				<th>State</thh>
+				<th>Zip</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tr th:each="employ:${listemp}">
+			<td th:text="${employ.id}"></td>
+			<td th:text="${employ.name}"></td>
+			<td th:text="${employ.gender}"></td>
+			<td th:text="${employ.email}"></td>
+			<td th:text="${employ.phone}"></td>
+			<td th:text="${employ.dob}"></td>
+			<td th:text="${employ.joindate}"></td>
+			<td th:text="${employ.address.country}"></td>
+			<td th:text="${employ.address.city}"></td>
+			<td th:text="${employ.address.state}"></td>
+			<td th:text="${employ.address.zip}"></td>
+			<td><a th:href="@{/delete?(id=${employ.id})}"><input
+					type="submit" value="Delete" class="btn btn-danger"></a> <a
+				th:href="@{/edit?(id=${employ.id})}"><input type="submit"
+					value="Edit" class="btn btn-success"></a></td>
+
+
+
+
+		</tr>
+
+	</table>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#mytable').DataTable();
+		});
+	</script>
+</body>
+</html>

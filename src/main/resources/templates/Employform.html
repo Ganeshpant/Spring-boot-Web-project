@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div th:insert="hrader.html"></div>
+<p style="color:green">[[${message}]]</p>
+	<div class="container">
+		<div class="card">
+		<form action="/employ" method="post">
+			<div class="card-header bg-primary text-center text-white fs-3">Employee
+				Form</div>
+			<div class="card-body">
+				<div class="row py-2">
+
+					<div class="col-4">Name</div>
+					<div class="col-6">
+						<input type="text" name="name" placeholder="Enter your name"
+							class="form-control">
+					</div>
+				</div>
+				<div class="row py-2">
+
+					<div class="col-4">Gender</div>
+					<div class="col-6">
+						<input type="radio" name="gender" value="mael"> Male <input
+							type="radio" name="gender" value="female"> Female <input
+							type="radio" name="gender" value="other"> Other
+					</div>
+				</div>
+				<div class="row py-2">
+
+					<div class="col-4">Email</div>
+					<div class="col-6">
+						<input type="email" name="email" placeholder="Enter your email"
+							class="form-control">
+					</div>
+				</div>
+				<div class="row py-2">
+
+					<div class="col-4">phone</div>
+					<div class="col-6">
+						<input type="text" name="phone"
+							placeholder="Enter your pnone number" class="form-control">
+					</div>
+				</div>
+				<div class="row py-2">
+
+					<div class="col-4">Date of birth(dob)</div>
+					<div class="col-6">
+						<input type="date" name="dob" class="form-control">
+					</div>
+				</div>
+
+				<div class="row py-2">
+
+					<div class="col-4">joindate</div>
+					<div class="col-6">
+						<input type="date" name="joindate" class="form-control">
+					</div>
+				</div>
+
+				<div class="row py-2">
+
+					<div class="col-4">Age</div>
+					<div class="col-6">
+						<input type="number" name="age" placeholder="Enter your age"
+							class="form-control">
+					</div>
+				</div>
+				<div class="row py-2">
+
+					<div class="col-4">Post</div>
+					<div class="col-6">
+						<input type="text" name="post" placeholder="Enter your Post"
+							class="form-control">
+					</div>
+				</div>
+				<div class="row py-2">
+
+					<div class="col-4">Salary</div>
+					<div class="col-6">
+						<input type="number" name="salary" placeholder="Enter your salary"
+							class="form-control">
+					</div>
+				</div>
+
+				<div class="row py-2">
+					<div class="col-4">Country</div>
+					<div class="col-6">
+						<select name="address.country" class="form-control">
+							<option value="">-----Select Country----</option>
+							<option value="Nepal">Nepal</option>
+							<option value="China">China</option>
+							<option value="India">India</option>
+							<option value="Japan">Japan</option>
+							<option value="Koria">Koria</option>
+
+						</select>
+					</div>
+				</div>
+
+				<div class="row py-2">
+
+					<div class="col-4">City</div>
+					<div class="col-6">
+						<input type="text" name="address.city"
+							placeholder="Enter your city" class="form-control">
+					</div>
+				</div>
+
+
+				<div class="row py-2">
+					<div class="col-4">State</div>
+					<div class="col-6">
+						<input type="text" name="address.state"
+							placeholder="Enter your state" class="form-control">
+					</div>
+				</div>
+
+				<div class="row py-2">
+					<div class="col-4">Zip Code</div>
+					<div class="col-6">
+						<input type="text" name="address.zip"
+							placeholder="Enter your zip" class="form-control">
+					</div>
+				</div>
+				<div class="row py-2">
+
+					<div class="col-4"></div>
+					<div class="col-6">
+						<input type="submit" value ="Add" class="btn btn-success">
+						
+					</div>
+				</div>
+			</div>
+			</form>
+			<a href="/employlist"><input type="button" value ="Table_Data" class="btn btn-success"></a>
+			<div class="card-footer bg-info text-center text-yellow">CopyRight@2022</div>
+
+		</div>
+
+	</div>
+</body>
+</html>
